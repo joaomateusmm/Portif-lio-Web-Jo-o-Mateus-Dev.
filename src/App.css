@@ -1,0 +1,359 @@
+* {
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box; /* Alterado de 'none' para 'border-box' */
+  scroll-behavior: smooth;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flasher {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  & p {
+    margin-top: 45px;
+    margin-bottom: -30px;
+  }
+}
+
+/* --- ESTILOS GERAIS PARA TELAS MAIORES (PADRÃO) --- */
+
+.titulo-principal {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  width: 100%;
+  justify-content: flex-start;
+  margin-left: 400px; /* Margem para desktop */
+}
+
+.content h1.title {
+  font-weight: 650;
+  font-size: 5rem;
+  color: #ffffff;
+  margin: 0;
+  padding-right: 1rem;
+  white-space: nowrap;
+}
+
+.typewriter-text {
+  font-size: 5rem;
+  font-weight: 650;
+  color: #1778c7;
+  min-width: 800px; /* Largura para desktop */
+  text-align: left;
+  position: relative;
+}
+
+.typewriter-text::after {
+  content: "|";
+  color: #fff;
+  font-weight: 100;
+  animation: flasher 0.7s infinite;
+  margin-left: 5px;
+}
+
+ul {
+  gap: 27px;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-donate {
+  --clr-font-main: hsla(0 0% 20% / 100);
+  --btn-bg-1: hsla(194 100% 69% / 1);
+  --btn-bg-2: hsla(217 100% 56% / 1);
+  --btn-bg-color: hsla(360 100% 100% / 1);
+  --radii: 0.5em;
+  cursor: pointer;
+  padding: 0.3em 0.5em;
+  min-width: 100px;
+  min-height: 35px;
+  font-size: var(--size, 1rem);
+  font-weight: 500;
+  transition: 0.8s;
+  background-size: 280% auto;
+  background-image: linear-gradient(
+    325deg,
+    var(--btn-bg-2) 0%,
+    var(--btn-bg-1) 55%,
+    var(--btn-bg-2) 90%
+  );
+  border: none;
+  border-radius: var(--radii);
+  color: #ffffff;
+  box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5),
+    0px 5px 5px -1px rgba(58, 125, 233, 0.25),
+    inset 4px 4px 8px rgba(175, 230, 255, 0.5),
+    inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+}
+
+.header-list-item {
+  font-size: 14px;
+}
+
+.btn-donate:hover {
+  background-position: right top;
+  transform: scale(1.05);
+}
+
+.btn-donate:is(:focus, :focus-visible, :active) {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-donate {
+    transition: linear;
+  }
+}
+
+ul a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+ul a:hover {
+  color: #ffffff;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+}
+
+.header {
+  animation: appear 3s ease;
+  backdrop-filter: blur(5px);
+  height: 55px;
+  border: 0.5px solid gray;
+  background: rgba(128, 128, 128, 0.048);
+  width: 400px;
+  position: fixed;
+  top: 0; /* Começa na parte superior da tela */
+  left: 50%;
+  transform: translate(-50%, 0); /* Ajuste: remove o -50% no Y */
+  margin-top: 15px; /* Mantém a margem para posicionar abaixo do topo */
+  border-radius: 6px;
+  z-index: 1000; /* Garante que o header fique sobre outros elementos */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Adiciona transição para o efeito de aparecer/sumir */
+}
+
+.header-hidden {
+  transform: translate(
+    -50%,
+    -100px
+  ); /* Move o header para cima e para fora da tela */
+  opacity: 0; /* Esconde completamente */
+  pointer-events: none; /* Desabilita interações quando escondido */
+}
+
+.header-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.links-contato {
+  margin-top: 100px;
+  display: flex; /* Define como flex container */
+  flex-direction: row; /* Coloca os links-1 e links-2 lado a lado */
+  gap: 50px; /* Espaço entre as colunas de links */
+  color: #fff; /* Cor do texto padrão para este bloco */
+  /* Centraliza o próprio container de links-contato se ele não ocupar 100% da largura do content */
+  justify-content: center;
+  align-items: center; /* Centraliza verticalmente se houver diferença de altura */
+  flex-wrap: wrap; /* Permite que os blocos de link quebrem para a próxima linha em telas pequenas */
+  max-width: 900px; /* Limita a largura máxima para desktop para não esticar demais */
+  width: 100%; /* Ocupa toda a largura disponível no content */
+}
+
+.links-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.links-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.links-contato a {
+  justify-content: center;
+  display: flex; /* Essencial: Torna cada link um flex container */
+  align-items: center; /* Centraliza verticalmente o ícone e o texto */
+  gap: 10px; /* Espaço entre o ícone e o texto */
+  color: #ffffff; /* Garante que os links de contato sejam brancos */
+  /* Remove estilos padrao do navegador para links */
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.links-contato a:visited,
+.links-contato a:active {
+  color: #ffffff; /* Mantém branco após visitado/ativo */
+}
+
+.links-contato a:hover {
+  color: #eeeeee; /* Um leve efeito hover */
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.2));
+}
+
+/* Estilos para os ícones Lucide, se precisar de ajuste fino */
+.links-contato a svg {
+  vertical-align: middle; /* Ajuda a alinhar o ícone com o texto */
+  flex-shrink: 0; /* Impede que o ícone diminua em telas menores */
+}
+
+.content,
+.content-2,
+.content-3,
+.content-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content .desc,
+.content-2 .desc,
+.content-3 .desc,
+.content-4 .desc {
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  max-width: 600px;
+}
+
+.content-2 {
+  animation: scroll 1ms ease;
+  animation-timeline: view();
+  background-color: black;
+}
+
+.content-2 h1,
+.content-3 h1,
+.content-4 h1 {
+  font-size: 5.5rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.content-3,
+.content-4 {
+  background-color: black;
+}
+
+/* --- MEDIA QUERY PARA TELAS MENORES (CELULAR - max-width: 750px) --- */
+@media (max-width: 750px) {
+  /* BODY & CONTAINER */
+  body {
+    font-size: 14px;
+  }
+
+  /* HEADER */
+  .header {
+    width: 90%;
+    max-width: 130px;
+    margin-top: 12px;
+  }
+
+  .header-list {
+    justify-content: center;
+  }
+
+  .header-list-item:not(:has(.btn-donate)) {
+    display: none;
+  }
+
+  /* TITULO PRINCIPAL */
+  .titulo-principal {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .content {
+    gap: 20px;
+  }
+
+  .content h1.title,
+  .typewriter-text {
+    font-size: 2.5rem;
+    padding-right: 0;
+    white-space: normal;
+    min-width: unset;
+    text-align: center;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  /* Condição para manter lado a lado se a largura permitir, mesmo em mobile */
+  @media (min-width: 480px) {
+    .titulo-principal {
+      flex-direction: row;
+      justify-content: center;
+      align-items: baseline;
+      text-align: left;
+    }
+
+    .content h1.title {
+      padding-right: 0.5rem;
+      white-space: nowrap;
+    }
+  }
+
+  /* CONTEÚDOS GERAIS (content, content-2, etc.) */
+  .content .desc,
+  .content-2 .desc,
+  .content-3 .desc,
+  .content-4 .desc {
+    font-size: 0.9rem;
+    padding: 0 15px;
+    max-width: 90%;
+  }
+
+  .content-2 h1,
+  .content-3 h1,
+  .content-4 h1 {
+    font-size: 3rem;
+    text-align: center;
+    padding: 0 15px;
+  }
+}
