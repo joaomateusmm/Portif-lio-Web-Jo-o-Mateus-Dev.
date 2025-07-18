@@ -1,68 +1,60 @@
 import React, { useState, useEffect, useRef } from "react";
+import "./animation.css";
 import "./App.css";
-import background from "./assets/background.jpg";
+import ReactLogo from "./assets/react.svg";
+import jsLogo from "./assets/js.svg";
+import htmlLogo from "./assets/html.svg";
+import cssLogo from "./assets/css.svg";
 import Typewriter from "./components/Typewriter";
-import { MailPlus } from "lucide-react";
-import { Phone } from "lucide-react";
-import { Linkedin } from "lucide-react";
-import { Github } from "lucide-react";
+import { MailPlus, Phone, Linkedin, Github, Menu, X } from "lucide-react"; // Importar Menu e X
 
 function App() {
-  const [showHeader, setShowHeader] = useState(true); // Estado para controlar a visibilidade do header
-  const lastScrollY = useRef(0); // Referência para armazenar a última posição do scroll
+  const [showHeader, setShowHeader] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Novo estado para o menu mobile
+  const lastScrollY = useRef(0);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      // Pega a posição atual do scroll
       const currentScrollY = window.scrollY;
 
-      // Lógica para mostrar/esconder o header
-      // Se o scroll for para baixo E não estiver no topo da página, esconde o header
       if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-        // 100px é um offset para evitar esconder imediatamente
         setShowHeader(false);
-      }
-      // Se o scroll for para cima OU estiver muito próximo do topo, mostra o header
-      else if (currentScrollY < lastScrollY.current || currentScrollY < 50) {
-        // 50px para mostrar no topo
+      } else if (currentScrollY < lastScrollY.current || currentScrollY < 50) {
         setShowHeader(true);
       }
 
-      // Atualiza a última posição do scroll
       lastScrollY.current = currentScrollY;
     };
 
-    // Adiciona o event listener de scroll quando o componente monta
     window.addEventListener("scroll", handleScroll);
 
-    // Remove o event listener quando o componente desmonta para evitar vazamentos de memória
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []); // O array vazio garante que o efeito rode apenas uma vez (no mount e unmount)
 
   return (
-    <div
-      className="container"
-      style={{
-        backgroundImage: `url(${background})`,
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Adiciona a classe 'header-hidden' condicionalmente */}
+    <div className="container">
       <header className={`header ${showHeader ? "" : "header-hidden"}`}>
         <ul className="header-list">
           <li className="header-list-item">
             <a href="#skils">Skils</a>
           </li>
           <li className="header-list-item">
-            <a href="#projetos">Projetos</a>
+            <a href="#projetos">Portifólio</a>
           </li>
           <li className="header-list-item">
             <a href="#sobre">Sobre</a>
           </li>
           <a href="https://wa.link/npd4e9" className="btn-donate">
             Contato
+          </a>
+          <a className="hamburger-button" onClick={toggleMobileMenu}>
+            <Menu size={24} /> {/* Ícone de hambúrguer da Lucide */}
           </a>
         </ul>
       </header>
@@ -74,14 +66,19 @@ function App() {
         </div>
 
         <p className="desc">
-          Qual o <span style={{ color: "#1778C7" }}>diferencial</span> da sua
-          empresa diante dos concorrentes?
+          Qual o{" "}
+          <span className="Diferencial" style={{ color: "#1778C7" }}>
+            <strong>Diferencial</strong>
+          </span>{" "}
+          da sua empresa diante dos concorrentes?
           <br />
           Não tem? Agora é sua chance de se destacar! Entre em{" "}
-          <span style={{ color: "#1778C7" }}>Contato</span> e tenha agora um
-          site personalizado perfeito para o seu negócio.
+          <span className="Contato" style={{ color: "#1778C7" }}>
+            <strong>Contato</strong>
+          </span>{" "}
+          e tenha agora um site personalizado perfeito para o seu negócio.
         </p>
-        <section className="links-contato">
+        <section className="links-contato appear">
           <div className="links-1">
             <a>
               {" "}
@@ -106,13 +103,90 @@ function App() {
       </section>
 
       <section className="content-2" id="projetos">
-        <h1>Projetos</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-          totam obcaecati itaque, dicta similique molestiae provident ea velit
-          voluptate animi officiis delectus qui perspiciatis error vero eius
-          consectetur repudiandae pariatur?
+        <p className="imageReveal">
+          Linguagens e Frameworks mais usadas no mercado!
         </p>
+        <h1 className="imageReveal">Portifólio</h1>
+        <a className="flair"></a>
+        <div className="react-3d">
+          <img
+            src={ReactLogo}
+            alt="React Logo"
+            style={{ width: 58, height: 58, zIndex: 2 }}
+          />
+        </div>
+        <div className="javas-3d">
+          <img
+            src={jsLogo}
+            alt="js Logo"
+            style={{ width: 60, height: 60, zIndex: 2 }}
+          />
+        </div>
+        <div className="html-3d">
+          <img
+            src={htmlLogo}
+            alt="js Logo"
+            style={{ width: 58, height: 58, zIndex: 2 }}
+          />
+        </div>
+        <div className="css-3d">
+          <img
+            src={cssLogo}
+            alt="js Logo"
+            style={{ width: 68, height: 68, zIndex: 2 }}
+          />
+        </div>
+        <div className="react-3d-cll">
+          <img
+            src={ReactLogo}
+            alt="React Logo"
+            style={{ width: 70, height: 70, zIndex: 2 }}
+          />
+        </div>
+        <div className="javas-3d-cll">
+          <img
+            src={jsLogo}
+            alt="js Logo"
+            style={{ width: 58, height: 58, zIndex: 2 }}
+          />
+        </div>
+        <div className="html-3d-cll">
+          <img
+            src={htmlLogo}
+            alt="js Logo"
+            style={{ width: 58, height: 58, zIndex: 2 }}
+          />
+        </div>
+        <div className="css-3d-cll">
+          <img
+            src={cssLogo}
+            alt="js Logo"
+            style={{ width: 58, height: 58, zIndex: 2 }}
+          />
+        </div>
+
+        <div className="grid-cards imageReveal scroll-infinit">
+          <a
+            href="https://geradordeformas.netlify.app/"
+            className="item item1"
+          ></a>
+          <a
+            href="https://inquisitive-panda-64043c.netlify.app/"
+            className="item item2"
+          ></a>
+          <a
+            href="https://lovely-palmier-4f304b.netlify.app/"
+            className="item item3"
+          ></a>
+          <a
+            href="https://guileless-cannoli-9ddf9a.netlify.app/"
+            className="item item4"
+          ></a>
+          <a
+            href="https://joaomateusdev.netlify.app/"
+            className="item item5"
+          ></a>
+        </div>
       </section>
 
       <section className="content-3" id="skils">

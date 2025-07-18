@@ -5,25 +5,6 @@
   scroll-behavior: smooth;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes flasher {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -33,15 +14,25 @@ body {
 }
 
 .container {
-  width: 100%;
+  min-width: 100vw;
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  background-image: url(./assets/background.svg);
+  background-position: center;
+  background-position-y: top;
+  z-index: -2;
 
   & p {
+    font-size: larger;
     margin-top: 45px;
     margin-bottom: -30px;
   }
+}
+
+.Diferencial,
+.Contato {
+  filter: drop-shadow(0 0 4px rgba(49, 173, 255, 0.4));
 }
 
 /* --- ESTILOS GERAIS PARA TELAS MAIORES (PADRÃO) --- */
@@ -52,20 +43,25 @@ body {
   align-items: baseline;
   width: 100%;
   justify-content: flex-start;
-  margin-left: 400px; /* Margem para desktop */
+  margin-left: 550px; /* Margem para desktop */
 }
 
 .content h1.title {
   font-weight: 650;
-  font-size: 5rem;
+  font-size: 6rem;
   color: #ffffff;
   margin: 0;
   padding-right: 1rem;
   white-space: nowrap;
 }
 
+.content .desc {
+  margin-top: 80px;
+  transform: scale(1.3);
+}
+
 .typewriter-text {
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 650;
   color: #1778c7;
   min-width: 800px; /* Largura para desktop */
@@ -82,7 +78,7 @@ body {
 }
 
 ul {
-  gap: 27px;
+  gap: 42px;
   padding: 0;
   margin: 0;
 }
@@ -94,11 +90,11 @@ ul {
   --btn-bg-color: hsla(360 100% 100% / 1);
   --radii: 0.5em;
   cursor: pointer;
-  padding: 0.3em 0.5em;
+  padding: 0.5em 0.7em;
   min-width: 100px;
-  min-height: 35px;
-  font-size: var(--size, 1rem);
-  font-weight: 500;
+  min-height: 48px;
+  font-size: 17px;
+  font-weight: 600;
   transition: 0.8s;
   background-size: 280% auto;
   background-image: linear-gradient(
@@ -117,7 +113,7 @@ ul {
 }
 
 .header-list-item {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .btn-donate:hover {
@@ -132,7 +128,7 @@ ul {
 
 @media (prefers-reduced-motion: reduce) {
   .btn-donate {
-    transition: linear;
+    transition: ease;
   }
 }
 
@@ -142,21 +138,22 @@ ul a {
   align-items: center;
   flex-direction: row;
   color: #ffffff;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 ul a:hover {
   color: #ffffff;
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+  transform: scale(1.05);
 }
 
 .header {
   animation: appear 3s ease;
   backdrop-filter: blur(5px);
-  height: 55px;
+  height: 65px;
   border: 0.5px solid gray;
   background: rgba(128, 128, 128, 0.048);
-  width: 400px;
+  width: 490px;
   position: fixed;
   top: 0; /* Começa na parte superior da tela */
   left: 50%;
@@ -198,15 +195,19 @@ ul a:hover {
 }
 
 .links-1 {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  font-size: larger;
 }
 
 .links-2 {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  font-size: larger;
   margin-left: auto;
 }
 
@@ -230,6 +231,7 @@ ul a:hover {
 .links-contato a:hover {
   color: #eeeeee; /* Um leve efeito hover */
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.2));
+  transform: scale(1.03);
 }
 
 /* Estilos para os ícones Lucide, se precisar de ajuste fino */
@@ -238,10 +240,9 @@ ul a:hover {
   flex-shrink: 0; /* Impede que o ícone diminua em telas menores */
 }
 
-.content,
-.content-2,
-.content-3,
-.content-4 {
+/* --- SEÇÃO .content (Primeira Seção) --- */
+.content {
+  animation: appear 3s ease; /* Esta animação está apenas no .content */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -249,9 +250,308 @@ ul a:hover {
   height: 100vh;
 }
 
-.content .desc,
-.content-2 .desc,
-.content-3 .desc,
+.content .desc {
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  max-width: 600px;
+}
+
+/* --- SEÇÃO .content-2 --- */
+
+.scroll-infinit {
+  animation: apear 10s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 99%;
+  max-width: 1536px;
+  margin-inline: auto;
+  position: relative;
+  height: 300px;
+  margin-top: 100px;
+  margin-bottom: 80px;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes scrollleft {
+  to {
+    left: -600px;
+  }
+}
+
+.content-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 775px;
+  gap: 50px;
+  z-index: 999;
+}
+
+.react-3d {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  z-index: 10;
+  animation: autoShow both;
+  animation-timeline: view(auto 35%);
+  border-radius: 12px;
+  border: 0.5px solid gray;
+  background: rgba(128, 128, 128, 0.05);
+  backdrop-filter: blur(5px);
+  filter: drop-shadow(0 0 15px rgba(0, 153, 255, 0.7));
+  transition: all 0.4s ease;
+}
+
+.javas-3d {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  z-index: 10;
+  animation: autoShow-2 both;
+  animation-timeline: view(auto 15%);
+  border-radius: 12px;
+  border: 0.5px solid gray;
+  background: rgba(128, 128, 128, 0.05);
+  backdrop-filter: blur(5px);
+  filter: drop-shadow(0 0 15px rgba(251, 255, 0, 0.45));
+  transition: all 0.4s ease;
+}
+
+.html-3d {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  z-index: 10;
+  animation: autoShow-3 both;
+  animation-timeline: view(auto 15%);
+  border-radius: 12px;
+  border: 0.5px solid gray;
+  background: rgba(128, 128, 128, 0.05);
+  backdrop-filter: blur(5px);
+  filter: drop-shadow(0 0 13px rgba(255, 115, 0, 0.7));
+  transition: all 0.4s ease;
+  perspective: 1000px;
+}
+
+.css-3d {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  width: 92px;
+  height: 92px;
+  position: absolute;
+  z-index: 10;
+  animation: autoShow-4 both;
+  animation-timeline: view(auto 15%);
+  border-radius: 12px;
+  border: 0.5px solid gray;
+  background: rgba(128, 128, 128, 0.05);
+  backdrop-filter: blur(5px);
+  filter: drop-shadow(0 0 15px rgba(4, 0, 255, 0.9));
+  transition: all 0.4s ease;
+}
+
+.react-3d:hover {
+  transform: scale(1.4);
+}
+
+.css-3d:hover {
+  transform: scale(1.4);
+}
+
+.react-3d-cll,
+.javas-3d-cll,
+.html-3d-cll,
+.css-3d-cll {
+  display: none;
+  opacity: 0;
+}
+
+.flair {
+  opacity: 0.3;
+  animation: scale both;
+  animation-timeline: view(50% 20%);
+  filter: blur(35px);
+  margin-top: 138px;
+  position: absolute;
+  width: 600px;
+  height: 80px;
+  background: #005091;
+  background: radial-gradient(
+    circle,
+    rgba(0, 80, 145, 1) 0%,
+    rgba(122, 195, 255, 1) 15%,
+    rgba(255, 255, 255, 0.31) 44%,
+    rgba(0, 0, 0, 0) 88%
+  );
+  border-radius: 80%;
+  z-index: 1;
+}
+
+.grid-cards {
+  display: flex;
+  gap: 50px;
+  margin-top: -30px;
+}
+
+.item {
+  border: 0.5px solid gray;
+  background: rgba(128, 128, 128, 0.2);
+  border-radius: 15px;
+  width: 384px;
+  height: 216px;
+  position: absolute;
+  left: calc(300px * 5);
+  animation-name: scrollleft;
+  animation-duration: 50s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  cursor: default;
+  transition: all 0.4s ease;
+  overflow: visible;
+  opacity: 1;
+  cursor: pointer;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.35));
+}
+
+.item1 {
+  animation-delay: calc(60s / 6 * (6 - 1) * -1);
+  background-image: url("./assets/site1.svg");
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease;
+  backdrop-filter: blur(15px);
+  color: #eeeeee;
+  justify-content: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.item2 {
+  animation-delay: calc(60s / 6 * (6 - 2) * -1);
+  background-image: url("./assets/site2.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(15px);
+}
+
+.item3 {
+  animation-delay: calc(60s / 6 * (6 - 3) * -1);
+  background-image: url("./assets/site3.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(15px);
+}
+
+.item4 {
+  animation-delay: calc(60s / 6 * (6 - 4) * -1);
+  background-image: url("./assets/site4.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item5 {
+  animation-delay: calc(60s / 6 * (6 - 5) * -1);
+  background-image: url("./assets/site5.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item:hover {
+  transform: scale(1.015);
+  filter: drop-shadow(0 0 3px rgba(40, 158, 255, 0.3));
+}
+
+.content-2 h1 {
+  font-size: 7rem;
+  color: #ffffff;
+  margin-top: 25px;
+  margin-bottom: 140px;
+  z-index: 999;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.9));
+}
+
+.content-2 p {
+  font-size: 1.1rem;
+  color: #1778c7;
+  filter: drop-shadow(0 0 3px rgba(40, 158, 255, 0.658));
+  margin-top: 75px;
+  margin-bottom: -70px;
+  z-index: 999;
+}
+
+.content-2 .desc {
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  max-width: 600px;
+}
+
+/* --- SEÇÃO .content-3 --- */
+.content-3 {
+  background-color: black; /* Este background está apenas no .content-3 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content-3 h1 {
+  font-size: 5.5rem;
+  color: #ffffff;
+  margin-bottom: 20px; /* Note: Este tinha 20px de margin-bottom no original */
+}
+
+.content-3 .desc {
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  max-width: 600px;
+}
+
+/* --- SEÇÃO .content-4 --- */
+.content-4 {
+  background-color: black; /* Este background está apenas no .content-4 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content-4 h1 {
+  font-size: 5.5rem;
+  color: #ffffff;
+  margin-bottom: 20px; /* Note: Este tinha 20px de margin-bottom no original */
+}
+
 .content-4 .desc {
   font-size: 1rem;
   color: #ffffff;
@@ -259,23 +559,8 @@ ul a:hover {
   max-width: 600px;
 }
 
-.content-2 {
-  animation: scroll 1ms ease;
-  animation-timeline: view();
-  background-color: black;
-}
-
-.content-2 h1,
-.content-3 h1,
-.content-4 h1 {
-  font-size: 5.5rem;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.content-3,
-.content-4 {
-  background-color: black;
+.hamburger-button {
+  display: none;
 }
 
 /* --- MEDIA QUERY PARA TELAS MENORES (CELULAR - max-width: 750px) --- */
@@ -288,8 +573,25 @@ ul a:hover {
   /* HEADER */
   .header {
     width: 90%;
-    max-width: 130px;
+    max-width: 230px;
     margin-top: 12px;
+  }
+
+  .hamburger-button {
+    background: transparent;
+    border: 1px solid gray;
+    padding: 8px;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .hamburger-button:hover {
+    transform: scale(1.05);
   }
 
   .header-list {
@@ -303,19 +605,21 @@ ul a:hover {
   /* TITULO PRINCIPAL */
   .titulo-principal {
     flex-direction: column;
-    align-items: center;
     margin-left: 0;
-    text-align: center;
-    padding: 0 15px;
+    padding: 0px;
   }
 
   .content {
     gap: 20px;
   }
 
+  .flair {
+    margin-top: 95px;
+  }
+
   .content h1.title,
   .typewriter-text {
-    font-size: 2.5rem;
+    font-size: 3rem;
     padding-right: 0;
     white-space: normal;
     min-width: unset;
@@ -324,29 +628,37 @@ ul a:hover {
     line-height: 1.2;
   }
 
-  /* Condição para manter lado a lado se a largura permitir, mesmo em mobile */
-  @media (min-width: 480px) {
-    .titulo-principal {
-      flex-direction: row;
-      justify-content: center;
-      align-items: baseline;
-      text-align: left;
-    }
-
-    .content h1.title {
-      padding-right: 0.5rem;
-      white-space: nowrap;
-    }
+  .react-3d,
+  .javas-3d,
+  .html-3d,
+  .css-3d {
+    display: none;
+    opacity: 0;
   }
 
+  .titulo-principal {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+  }
+
+  .content h1.title {
+    padding-right: 0.5rem;
+    white-space: nowrap;
+  }
   /* CONTEÚDOS GERAIS (content, content-2, etc.) */
   .content .desc,
   .content-2 .desc,
   .content-3 .desc,
   .content-4 .desc {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 0 15px;
-    max-width: 90%;
+    max-width: 70%;
+  }
+
+  .content-2 h1 {
+    margin-bottom: 150px;
   }
 
   .content-2 h1,
@@ -355,5 +667,86 @@ ul a:hover {
     font-size: 3rem;
     text-align: center;
     padding: 0 15px;
+  }
+
+  .links-2 {
+    margin-top: -2px;
+    margin-right: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .react-3d-cll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    z-index: 10;
+    animation: autoShow-5 both;
+    animation-timeline: view(auto 35%);
+    border-radius: 20px;
+    border: 0.5px solid gray;
+    background: rgba(128, 128, 128, 0.05);
+    backdrop-filter: blur(5px);
+    filter: drop-shadow(0 0 13px rgba(0, 153, 255, 0.7));
+  }
+
+  .javas-3d-cll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    z-index: 10;
+    animation: autoShow-6 both;
+    animation-timeline: view(auto 15%);
+    border-radius: 20px;
+    border: 0.5px solid gray;
+    background: rgba(128, 128, 128, 0.05);
+    backdrop-filter: blur(5px);
+    filter: drop-shadow(0 0 13px rgba(251, 255, 0, 0.5));
+  }
+
+  .html-3d-cll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    z-index: 10;
+    animation: autoShow-7 both;
+    animation-timeline: view(auto 15%);
+    border-radius: 20px;
+    border: 0.5px solid gray;
+    background: rgba(128, 128, 128, 0.05);
+    backdrop-filter: blur(5px);
+    filter: drop-shadow(0 0 13px rgba(255, 115, 0, 0.7));
+  }
+
+  .css-3d-cll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    z-index: 10;
+    animation: autoShow-8 both;
+    animation-timeline: view(auto 15%);
+    border-radius: 20px;
+    border: 0.5px solid gray;
+    background: rgba(128, 128, 128, 0.05);
+    backdrop-filter: blur(5px);
+    filter: drop-shadow(0 0 13px rgba(4, 0, 255, 0.7));
   }
 }

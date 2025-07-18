@@ -1,0 +1,173 @@
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+
+.scale {
+  animation: scale both;
+  animation-timeline: view(60% 30%);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flasher {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes autoShow {
+  from {
+    opacity: 0;
+    transform: translateY(0) translateX(0) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-90px) translateX(550px) translateZ(0);
+  }
+}
+
+@keyframes autoShow-2 {
+  from {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(165px) translateX(-480px);
+  }
+}
+
+@keyframes autoShow-3 {
+  from {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-180px) translateX(-340px);
+  }
+}
+
+@keyframes autoShow-4 {
+  from {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(195px) translateX(350px);
+  }
+}
+
+.autoShow {
+  animation: autoShow both;
+  animation-timeline: view(50% 20%);
+}
+
+@keyframes imageReveal {
+  from {
+    filter: saturate(0) contrast(4) brightness(0.1) blur(5px) opacity(0);
+    scale: 0.95;
+    translate: 0 4rem;
+  }
+  to {
+    filter: none;
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+  }
+}
+
+.imageReveal {
+  animation: imageReveal both;
+  animation-timeline: view(
+    60% 12%
+  ); /* A primeira porcentagem é o final
+  da animação, e a sagunda é onde começa */
+}
+
+@keyframes pulse-glow {
+  0% {
+    /* Brilho inicial mais suave */
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.6),
+      0 0 7px 4px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    /* Brilho máximo, mais intenso e espalhado */
+    box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.9),
+      0 0 22px 15px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    /* Retorna ao brilho inicial para um loop suave */
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.6),
+      0 0 7px 4px rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Animaçoes responsivas para telas de celular */ /* Animaçoes responsivas para telas de celular */
+/* Animaçoes responsivas para telas de celular */ /* Animaçoes responsivas para telas de celular */
+/* Animaçoes responsivas para telas de celular */ /* Animaçoes responsivas para telas de celular */
+
+@keyframes autoShow-5 {
+  from {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-165px) translateX(120px);
+  }
+}
+
+@keyframes autoShow-6 {
+  from {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-180px) translateX(-130px);
+  }
+}
+
+@keyframes autoShow-7 {
+  from {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(110px) translateX(-80px);
+  }
+}
+
+@keyframes autoShow-8 {
+  from {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(130px) translateX(155px);
+  }
+}
+
+/* Animaçoes responsivas para telas de celular */ /* Animaçoes responsivas para telas de celular */
+/* Animaçoes responsivas para telas de celular */ /* Animaçoes responsivas para telas de celular */
+/* Animaçoes responsivas para telas de celular */ /* Animaçoes responsivas para telas de celular */
