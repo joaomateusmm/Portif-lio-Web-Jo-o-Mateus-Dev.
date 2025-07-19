@@ -5,6 +5,8 @@ import ReactLogo from "./assets/react.svg";
 import jsLogo from "./assets/js.svg";
 import htmlLogo from "./assets/html.svg";
 import cssLogo from "./assets/css.svg";
+import pythonLogo from "./assets/python.svg";
+import prismaLogo from "./assets/prisma.svg";
 import Typewriter from "./components/Typewriter";
 import { MailPlus, Phone, Linkedin, Github, Menu, X } from "lucide-react"; // Importar Menu e X
 
@@ -30,12 +32,30 @@ function App() {
       lastScrollY.current = currentScrollY;
     };
 
+    //Animaçao do scroll -Animaçao do scroll //
+
+    const myObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    });
+
+    const Elements = document.querySelectorAll(".hidden");
+
+    Elements.forEach((Element) => myObserver.observe(Element));
+
+    //Animaçao do scroll -Animaçao do scroll //
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // O array vazio garante que o efeito rode apenas uma vez (no mount e unmount)
+  }, []);
 
   return (
     <div className="container">
@@ -190,24 +210,123 @@ function App() {
       </section>
 
       <section className="content-3" id="skils">
-        <h1>Projetos</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-          totam obcaecati itaque, dicta similique molestiae provident ea velit
-          voluptate animi officiis delectus qui perspiciatis error vero eius
-          consectetur repudiandae pariatur?
-        </p>
+        <h1 className="imageReveal">Skils</h1>
+        <a className="flair-2"></a>
+        <h2 className="imageReveal">Minhas habilidades e ferramentas!</h2>
+        <div className="cards-ling">
+          <div className="content-java hidden">
+            <p className="desc-ling">
+              #1{" "}
+              <span className="Contato" style={{ color: "#ffee00ff" }}>
+                Linguagem
+              </span>{" "}
+              mais utilizada no mercado!
+            </p>
+            <img
+              className="img-ling"
+              src={jsLogo}
+              alt="js Logo"
+              style={{ width: 58, height: 58, zIndex: 2 }}
+            />
+            <p className="title-ling">Java Script</p>
+          </div>
+          <div className="content-java hidden">
+            <p className="desc-ling">
+              Linguagem{" "}
+              <span className="Contato" style={{ color: "#ff5e00ff" }}>
+                padrão
+              </span>{" "}
+              para criação de páginas{" "}
+              <span className="Contato" style={{ color: "#ff5e00ff" }}>
+                Web.
+              </span>{" "}
+            </p>
+            <img
+              className="img-ling"
+              src={htmlLogo}
+              alt="js Logo"
+              style={{ width: 58, height: 58, zIndex: 2 }}
+            />
+            <p className="title-ling-html">HTML</p>
+          </div>
+          <div className="content-java hidden">
+            <p className="desc-ling">
+              Permite criar{" "}
+              <span className="Contato" style={{ color: "#0044ffff" }}>
+                designs
+              </span>{" "}
+              mais atraentes e responsivos.
+            </p>
+            <img
+              className="img-ling"
+              src={cssLogo}
+              alt="js Logo"
+              style={{ width: 58, height: 58, zIndex: 2 }}
+            />
+            <p className="title-ling-css">CSS</p>
+          </div>
+          <div className="content-java hidden">
+            <p className="desc-ling">
+              Criada pelo{" "}
+              <span className="Contato" style={{ color: "#00eeffff" }}>
+                Facebook
+              </span>{" "}
+              e amplamente utilizada no dev.{" "}
+              <span className="Contato" style={{ color: "#00eeffff" }}>
+                Front-end.
+              </span>{" "}
+            </p>
+            <img
+              className="img-ling"
+              src={ReactLogo}
+              alt="js Logo"
+              style={{ width: 58, height: 58, zIndex: 2 }}
+            />
+            <p className="title-ling-react">React</p>
+          </div>
+          <div className="content-java hidden">
+            <p className="desc-ling">
+              Linguagem de{" "}
+              <span className="Contato" style={{ color: "#ffee00ff" }}>
+                Programação
+              </span>{" "}
+              de{" "}
+              <span className="Contato" style={{ color: "#356eb9ff" }}>
+                alto nível
+              </span>{" "}
+              , em aplicações como dev. Web.
+            </p>
+            <img
+              className="img-ling"
+              src={pythonLogo}
+              alt="js Logo"
+              style={{ width: 58, height: 58, zIndex: 2 }}
+            />
+            <p className="title-ling">Python</p>
+          </div>
+          <div className="content-java hidden">
+            <p className="desc-ling">
+              Serviço de{" "}
+              <span className="Contato" style={{ color: "#1d4880ff" }}>
+                banco de dados
+              </span>{" "}
+              gerenciado, rápido e otimizado.
+            </p>
+            <img
+              className="img-ling"
+              src={prismaLogo}
+              alt="js Logo"
+              style={{ width: 58, height: 58, zIndex: 2 }}
+            />
+            <p className="title-ling">Prisma</p>
+          </div>
+        </div>
       </section>
 
       <section className="content-4" id="sobre">
-        <h1>Projetos</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus,
-          totam obcaecati itaque, dicta similique molestiae provident ea velit
-          voluptate animi officiis delectus qui perspiciatis error vero eius
-          consectetur repudiandae pariatur?
-        </p>
+        <h1>Sobre</h1>
       </section>
+      <footer></footer>
     </div>
   );
 }
