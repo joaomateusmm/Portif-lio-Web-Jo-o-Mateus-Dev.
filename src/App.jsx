@@ -338,7 +338,7 @@ function App() {
             <p className="title-ling">Prisma</p>
           </div>
         </div>
-        <div className="seção-skills">
+        <div className="seção-skills appear">
           <div className="container-vantagens hidden2">
             <div className="titulo-desc">
               <p>
