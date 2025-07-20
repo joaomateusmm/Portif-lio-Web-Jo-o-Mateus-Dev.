@@ -2,13 +2,27 @@ import React, { useState, useEffect, useRef } from "react";
 import "./animation.css";
 import "./App.css";
 import ReactLogo from "./assets/react.svg";
+import figma from "./assets/figma.svg";
+import photoshop from "./assets/photo.svg";
+import premiere from "./assets/premi.svg";
 import jsLogo from "./assets/js.svg";
 import htmlLogo from "./assets/html.svg";
 import cssLogo from "./assets/css.svg";
 import pythonLogo from "./assets/python.svg";
 import prismaLogo from "./assets/prisma.svg";
 import Typewriter from "./components/Typewriter";
-import { MailPlus, Phone, Linkedin, Github, Menu, X } from "lucide-react"; // Importar Menu e X
+import {
+  MailPlus,
+  ChartNoAxesCombined,
+  HandCoins,
+  PiggyBank,
+  Users,
+  Phone,
+  Linkedin,
+  Github,
+  Menu,
+  X,
+} from "lucide-react"; // Importar Menu e X
 
 function App() {
   const [showHeader, setShowHeader] = useState(true);
@@ -48,7 +62,7 @@ function App() {
 
     Elements.forEach((Element) => myObserver.observe(Element));
 
-    //Animaçao do scroll -Animaçao do scroll //
+    //Animaçao do scroll -Animaçao do scroll // //Animaçao do scroll -Animaçao do scroll //
 
     window.addEventListener("scroll", handleScroll);
 
@@ -61,6 +75,9 @@ function App() {
     <div className="container">
       <header className={`header ${showHeader ? "" : "header-hidden"}`}>
         <ul className="header-list">
+          <li className="header-list-item">
+            <a href="#home">Home</a>
+          </li>
           <li className="header-list-item">
             <a href="#skils">Skils</a>
           </li>
@@ -79,7 +96,7 @@ function App() {
         </ul>
       </header>
 
-      <section className="content">
+      <section id="home" className="content">
         <div className="titulo-principal">
           <h1 className="title">Ter um Site é</h1>
           <Typewriter />
@@ -160,28 +177,28 @@ function App() {
           <img
             src={ReactLogo}
             alt="React Logo"
-            style={{ width: 70, height: 70, zIndex: 2 }}
+            style={{ width: 50, height: 50, zIndex: 2 }}
           />
         </div>
         <div className="javas-3d-cll">
           <img
             src={jsLogo}
             alt="js Logo"
-            style={{ width: 58, height: 58, zIndex: 2 }}
+            style={{ width: 45, height: 45, zIndex: 2 }}
           />
         </div>
         <div className="html-3d-cll">
           <img
             src={htmlLogo}
             alt="js Logo"
-            style={{ width: 58, height: 58, zIndex: 2 }}
+            style={{ width: 45, height: 45, zIndex: 2 }}
           />
         </div>
         <div className="css-3d-cll">
           <img
             src={cssLogo}
             alt="js Logo"
-            style={{ width: 58, height: 58, zIndex: 2 }}
+            style={{ width: 45, height: 45, zIndex: 2 }}
           />
         </div>
 
@@ -319,6 +336,104 @@ function App() {
               style={{ width: 58, height: 58, zIndex: 2 }}
             />
             <p className="title-ling">Prisma</p>
+          </div>
+        </div>
+        <div className="seção-skills">
+          <div className="container-vantagens hidden2">
+            <div className="titulo-desc">
+              <p>
+                Porque contratar um{" "}
+                <span className="Contato" style={{ color: "#1778C7" }}>
+                  programador
+                </span>{" "}
+                ?
+              </p>
+              <h3>
+                <span className="Contato" style={{ color: "#1778C7" }}>
+                  Vantagens
+                </span>{" "}
+                que uma empresa<br></br>tem ao possuir um{" "}
+                <span className="Contato" style={{ color: "#1778C7" }}>
+                  site:
+                </span>{" "}
+              </h3>
+            </div>
+            <div class="features-section">
+              <div class="feature-item">
+                <a className="icon-vtg">
+                  <ChartNoAxesCombined width="38" height="38" color="#1778C7" />
+                </a>
+                <span>
+                  Transforme seu Nome em<br></br>uma Marca de Sucesso.
+                </span>
+              </div>
+
+              <div class="feature-item">
+                <a className="icon-vtg">
+                  <PiggyBank width="38" height="38" color="#1778C7" />
+                </a>
+                <span>
+                  Um Investimento Estratégico<br></br>com Retorno Garantido.
+                </span>
+              </div>
+
+              <div class="feature-item">
+                <a className="icon-vtg">
+                  <HandCoins width="38" height="38" color="#1778C7" />
+                </a>
+                <span>
+                  Tenha o Controle Absoluto e<br></br>Dobre seus Ganhos.
+                </span>
+              </div>
+
+              <div class="feature-item">
+                <a className="icon-vtg">
+                  <Users width="38" height="38" color="#1778C7" />
+                </a>
+                <span>
+                  Atraia uma Chuva de Clientes<br></br>Qualificados.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="container-ferramentas">
+            <h4>Diferencial e Ferramentas</h4>
+            <a>
+              <img src={figma} style={{ width: 120, height: 120, zIndex: 2 }} />
+              <p>
+                Editor <span style={{ color: "#FE4D12" }}>Gráfico</span> de
+                vetor e<br></br>
+                prototipagem com foco em <br></br>{" "}
+                <span style={{ color: "#FE4D12" }}>Design Web.</span>{" "}
+              </p>
+            </a>
+            <a>
+              <img
+                src={photoshop}
+                style={{ width: 120, height: 120, zIndex: 2 }}
+              />
+              <p>
+                {" "}
+                <span style={{ color: "#1778C7" }}>Software</span> de edição de
+                imagens,<br></br>
+                utilizado por{" "}
+                <span style={{ color: "#1778C7" }}>profissionais</span> de
+                <br></br>
+                diversas áreas.
+              </p>
+            </a>
+            <a>
+              <img
+                src={premiere}
+                style={{ width: 120, height: 120, zIndex: 2 }}
+              />
+              <p>
+                Software <span style={{ color: "#9A9AFE" }}>Linguagem</span> de
+                edição<br></br>
+                de vídeo desenvolvido pela<br></br>{" "}
+                <span style={{ color: "#9A9AFE" }}>Linguagem</span>{" "}
+              </p>
+            </a>
           </div>
         </div>
       </section>

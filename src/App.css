@@ -153,7 +153,7 @@ ul a:hover {
   border: 0.5px solid gray;
   background: rgba(128, 128, 128, 0.048);
   backdrop-filter: blur(5px);
-  width: 490px;
+  width: 570px;
   position: fixed;
   top: 0; /* Começa na parte superior da tela */
   left: 50%;
@@ -519,8 +519,8 @@ ul a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  margin-top: -100px;
+  height: 1700px;
+  margin-top: -300px;
 }
 
 .content-3 h2 {
@@ -544,7 +544,7 @@ ul a:hover {
   animation: scale both;
   animation-timeline: view(50% 20%);
   filter: blur(35px);
-  margin-top: -220px;
+  margin-top: -738px;
   position: absolute;
   width: 600px;
   height: 80px;
@@ -561,6 +561,7 @@ ul a:hover {
 }
 
 .cards-ling {
+  margin-top: -50px;
   gap: 50px;
   padding: 25px;
   display: flex;
@@ -598,7 +599,7 @@ ul a:hover {
     rgba(255, 255, 255, 0.01) 0%,
     rgba(128, 128, 128, 0.01) 78%
   );*/
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(3px);
   width: 250px;
   height: 190px;
   display: flex;
@@ -641,6 +642,8 @@ ul a:hover {
   transform: translate(7px, -75px);
 }
 
+/* Animaçao do scroll -Animaçao do scroll Animaçao do scroll -Animaçao do scroll */
+
 .hidden {
   opacity: 0;
   filter: blur(35px);
@@ -655,10 +658,117 @@ ul a:hover {
   transition: all 1.5s;
 }
 
+/* Animaçao do scroll -Animaçao do scroll Animaçao do scroll -Animaçao do scroll */
+
+.content-3 h3 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.content-3 p {
+  color: #fff;
+}
+
+.features-section {
+  margin-top: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  padding: 20px;
+  color: #fff;
+  max-width: 1000px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.1em;
+  line-height: 1.4;
+}
+
+.feature-item svg {
+  flex-shrink: 0;
+}
+
+.feature-item span {
+  display: block;
+}
+
+.icon-vtg {
+  width: 55px;
+  height: 55px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  transition: all 0.5s ease;
+  background: #ffffff;
+  background: linear-gradient(
+    43deg,
+    rgba(255, 255, 255, 0.01) 0%,
+    rgba(128, 128, 128, 0.1) 78%
+  );
+}
+
+.icon-vtg:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+}
+
+.seção-skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  margin-top: 100px;
+}
+
+.container-ferramentas {
+  transform: translate(0px, 15px);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  backdrop-filter: blur(5px);
+  border-radius: 25px;
+  height: 454px;
+  width: 450x;
+  padding: 30px;
+  & h4 {
+    margin-top: 0px;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+  }
+  & a {
+    margin-top: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    margin-bottom: 15px;
+    & img:hover {
+      filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.15));
+      transform: scale(1.05);
+    }
+    & img {
+      transition: all 0.5s ease;
+    }
+  }
+  & p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    transform: translate(7px, -28px);
+    font-weight: 500;
+  }
+}
+
 /* --- SEÇÃO .content-4 --- */
 .content-4 {
-  /* Este background está apenas no .content-4 */
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -668,7 +778,7 @@ ul a:hover {
 .content-4 h1 {
   font-size: 5.5rem;
   color: #ffffff;
-  margin-bottom: 20px; /* Note: Este tinha 20px de margin-bottom no original */
+  margin-bottom: 20px;
 }
 
 .content-4 .desc {
@@ -763,7 +873,7 @@ ul a:hover {
   }
 
   .content h1.title {
-    padding-right: 0.5rem;
+    padding-right: 1rem;
     white-space: nowrap;
   }
   /* CONTEÚDOS GERAIS (content, content-2, etc.) */
@@ -778,16 +888,8 @@ ul a:hover {
 
   .content-2 h1 {
     margin-bottom: 150px;
+    font-size: 4rem;
   }
-
-  .content-2 h1,
-  .content-3 h1,
-  .content-4 h1 {
-    font-size: 3rem;
-    text-align: center;
-    padding: 0 15px;
-  }
-
   .links-2 {
     margin-top: -2px;
     margin-right: 110px;
@@ -802,8 +904,8 @@ ul a:hover {
     align-items: center;
     justify-content: center;
     margin-top: 100px;
-    width: 80px;
-    height: 80px;
+    width: 65px;
+    height: 65px;
     position: absolute;
     z-index: 10;
     animation: autoShow-5 both;
@@ -820,8 +922,8 @@ ul a:hover {
     align-items: center;
     justify-content: center;
     margin-top: 100px;
-    width: 80px;
-    height: 80px;
+    width: 65px;
+    height: 65px;
     position: absolute;
     z-index: 10;
     animation: autoShow-6 both;
@@ -838,8 +940,8 @@ ul a:hover {
     align-items: center;
     justify-content: center;
     margin-top: 100px;
-    width: 80px;
-    height: 80px;
+    width: 65px;
+    height: 65px;
     position: absolute;
     z-index: 10;
     animation: autoShow-7 both;
@@ -856,8 +958,8 @@ ul a:hover {
     align-items: center;
     justify-content: center;
     margin-top: 100px;
-    width: 80px;
-    height: 80px;
+    width: 65px;
+    height: 65px;
     position: absolute;
     z-index: 10;
     animation: autoShow-8 both;
@@ -870,15 +972,62 @@ ul a:hover {
   }
 
   .content-3 {
-    margin-top: 250px;
+    margin-top: -120px;
+    & h1 {
+      font-size: 5.5rem;
+    }
+  }
+
+  .content-java {
+    min-width: 250px; /* Garante que cada card tenha pelo menos essa largura */
+    flex-shrink: 0; /* Impede que os cards encolham */
+  }
+
+  .flair-2 {
+    margin-top: -1480px;
   }
 
   .cards-ling {
-    gap: 50px;
+    gap: 15px;
     padding: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+  }
+
+  .cards-ling {
+    gap: 15px;
+    padding: 25px;
+    display: grid; /* Altera para grid */
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas de largura igual */
+    justify-items: center; /* Centraliza os itens dentro das células do grid */
+    align-items: start; /* Alinha os itens ao topo em cada célula do grid */
+    /* Remova flex-direction: column; se for usar grid */
+    /* flex-direction: column; */
+  }
+
+  .content-java {
+    width: 100%; /* Permite que os cards ocupem a largura total disponível na coluna */
+    max-width: 250px; /* Mantém um limite de largura para os cards */
+    min-width: unset; /* Sobrescreve o min-width anterior se necessário */
+    height: 190px; /* Deixa a altura se ajustar ao conteúdo */
+  }
+
+  .seção-skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0px;
+  }
+
+  .container-vantagens {
+    transition: none;
+    margin-top: -150px;
+    transform: scale(0.87);
+  }
+  .seção-skills {
+    transform: scale(0.87);
+    margin-top: 0px;
   }
 }

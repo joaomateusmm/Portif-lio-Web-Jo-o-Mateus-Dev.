@@ -21,6 +21,11 @@
   }
 }
 
+.appear {
+  animation: appear both;
+  animation-timeline: view(60% 30%);
+}
+
 @keyframes flasher {
   0%,
   100% {
