@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./animation.css";
 import "./App.css";
+import Fotominha from "./assets/Fotominha.svg";
+import logo1 from "./assets/logo1.svg";
+import logo2 from "./assets/logo2.svg";
+import logo3 from "./assets/logo3.svg";
 import ReactLogo from "./assets/react.svg";
 import figma from "./assets/figma.svg";
 import photoshop from "./assets/photo.svg";
@@ -119,7 +123,7 @@ function App() {
           <div className="links-1">
             <a>
               {" "}
-              <MailPlus color="#1778C7" /> joaomateusm@gmail.com
+              <MailPlus color="#1778C7" /> joaomateusmb@gmail.com
             </a>
             <br />
             <a href="https://wa.link/npd4e9">
@@ -227,8 +231,8 @@ function App() {
       </section>
 
       <section className="content-3" id="skils">
-        <h1 className="imageReveal">Skils</h1>
         <a className="flair-2"></a>
+        <h1 className="imageReveal">Skils</h1>
         <h2 className="imageReveal">Minhas habilidades e ferramentas!</h2>
         <div className="cards-ling">
           <div className="content-java hidden">
@@ -439,9 +443,215 @@ function App() {
       </section>
 
       <section className="content-4" id="sobre">
-        <h1>Sobre</h1>
+        <div className="about-intro">
+          <div className="intro-text">
+            <p className="pre-title">Um pouco sobre minha pessoa:</p>
+            <h1>
+              Programador Full-Stack |<br />
+              Desenvolvedor Web
+            </h1>
+            <p>
+              Desenvolvedor Full-Stack com mais de 3 anos de experiência na área
+              de Design, estou em transição de carreira, atuando na programação
+              e desenvolvimento Web. Acredito na união entre o belo e o
+              funcional, criar sites não apenas com um visual bonito e
+              atrativos, mas que tenham propósito e identidade de marca. Seja,
+              atuo como freelancer, ajudando pequenos e grandes empreendedores a
+              tornarem seus negócios mais profissionais, com foco em HTML, CSS e
+              JavaScript, frameworks como React. Além de implementações de APIs
+              em banco de dados como o MongoDB, usando Node.js para
+              Desenvolvimento do Back-End.
+            </p>
+            <p className="follow-me">Me siga em:</p>
+            <div className="social-links">
+              {/* LinkedIn */}
+              <a href="#" className="social-button" aria-label="LinkedIn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="24"
+                  height="24"
+                >
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              {/* GitHub */}
+              <a href="#" className="social-button" aria-label="GitHub">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="24"
+                  height="24"
+                >
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              {/* Instagram */}
+              <a href="#" className="social-button" aria-label="Instagram">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  width="24"
+                  height="24"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div className="intro-image">
+            {/* 2. Use a imagem importada aqui */}
+            <img src={Fotominha} alt="Foto do Programador Full-Stack" />
+          </div>
+        </div>
+
+        {/* --- Parte Inferior: Serviços --- */}
+        <div className="about-services">
+          <h2>O que eu faço?</h2>
+          <div className="services-cards">
+            <div className="card">
+              <div className="card-icon">
+                <img src={logo1} alt="Ícone Site da sua Marca" />
+              </div>
+              <h3>Site da sua Marca</h3>
+              <p>
+                Desenvolvo toda a parte visual do seu site, todo o Design e a
+                estética profissional que a sua marca precisa.
+              </p>
+            </div>
+            <div className="card">
+              <div className="card-icon">
+                <img src={logo2} alt="Ícone Página para Empresas" />
+              </div>
+              <h3>Página para Empresas</h3>
+              <p>
+                Desenvolvo toda a parte gráfica e lógica do site da sua empresa,
+                com sistemas de cadastro de usuários ou bancos de dados usados
+                no mundo todo.
+              </p>
+            </div>
+            <div className="card">
+              <div className="card-icon">
+                <img src={logo3} alt="Ícone Site para Profissionais" />
+              </div>
+              <h3>Site para Profissionais</h3>
+              <p>
+                Não possui uma empresa mas mesmo assim quer conseguir clientes?
+                seja psicólogo, dentista, personal, cozinheiro, etc. Seu site
+                fica pronto aqui.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
-      <footer></footer>
+
+      <footer class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section about">
+            <p>
+              Agora é sua chance de se destacar! Entre em Contato e tenha agora
+              um site personalizado perfeito para o seu negócio.
+            </p>
+            <div class="social-icons">
+              <a
+                href="https://www.linkedin.com/in/jo%C3%A3o-mateus-mesquita-161724364/"
+                class="social-link"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-linkedin"
+                >
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+
+              <a href="https://github.com/joaomateusmm" class="social-link">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-github"
+                >
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+
+              <a
+                href="https://www.instagram.com/joaomateusdev/"
+                class="social-link"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-instagram"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section links">
+            <h2 class="footer-title extra-links">Header</h2>
+            <ul>
+              <li>
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <a href="#skills">Skills</a>
+              </li>
+              <li>
+                <a href="#portifolio">Portifólio</a>
+              </li>
+              <li>
+                <a href="#sobre">Sobre</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-section contact">
+            <h2 class="footer-title">Contato</h2>
+            <p>joaomateusmb@gmail.com</p>
+            <p>(85) 9.9788-6755</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

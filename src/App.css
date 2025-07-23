@@ -3,6 +3,7 @@
   list-style: none;
   box-sizing: border-box; /* Alterado de 'none' para 'border-box' */
   scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -22,6 +23,7 @@ body {
   background-position: center;
   background-position-y: top;
   z-index: -2;
+  background-size: cover;
 
   & p {
     font-size: larger;
@@ -162,6 +164,10 @@ ul a:hover {
   border-radius: 6px;
   z-index: 1000; /* Garante que o header fique sobre outros elementos */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Adiciona transição para o efeito de aparecer/sumir */
+}
+
+.hamburger-button {
+  display: none;
 }
 
 .header-hidden {
@@ -593,12 +599,12 @@ ul a:hover {
 .content-java {
   padding: 10px;
   border: 1px solid gray;
-  /*background: #ffffff;
+  background: #ffffff;
   background: linear-gradient(
     43deg,
     rgba(255, 255, 255, 0.01) 0%,
     rgba(128, 128, 128, 0.01) 78%
-  );*/
+  );
   backdrop-filter: blur(3px);
   width: 250px;
   height: 190px;
@@ -768,42 +774,346 @@ ul a:hover {
 
 /* --- SEÇÃO .content-4 --- */
 .content-4 {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100vw;
 }
 
-.content-4 h1 {
-  font-size: 5.5rem;
+/* --- PARTE SUPERIOR: INTRODUÇÃO --- */
+.about-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 200px;
+  margin-bottom: 100px;
+}
+
+.intro-text {
+  flex-basis: 55%;
+  color: #fff;
+}
+
+.pre-title {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #fff;
+  margin-bottom: 0px;
+}
+
+.intro-text h1 {
+  font-size: 3.4rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 40px 0px;
+  color: var(--text-light);
+}
+
+.intro-text > p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+  max-width: 800px;
+  font-weight: normal;
+}
+
+.follow-me {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.social-links {
+  display: flex;
+  justify-content: start;
+  gap: 16px;
+  margin-top: 50px;
+}
+
+.social-button {
+  background-color: #005091;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-button:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.15);
+}
+
+.social-button[aria-label="Instagram"] svg {
+  stroke: white;
+  fill: none;
+}
+
+.intro-image {
+  flex-basis: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-image img {
+  width: 510px;
+  height: 510px;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+.intro-image img:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 15px rgba(151, 213, 255, 0.25));
+}
+
+/* --- PARTE INFERIOR: SERVIÇOS --- */
+.about-services h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 15px;
+  transform: translateX(-680px);
+}
+
+.services-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 80px;
+  flex-wrap: wrap;
+  margin-bottom: 250px;
+}
+
+.card {
+  padding: 35px 30px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 460px;
+  text-align: left;
+  cursor: default;
+
+  /* 1. Estado inicial */
+  opacity: 0.1;
+  filter: blur(3px);
+  background: transparent; /* Começa transparente para a transição do fundo funcionar */
+
+  /* 2. A transição de SAÍDA (volta ao normal) */
+  /* Aplica-se quando o mouse SAI do elemento. */
+  /* Duração de 0.5s, mas com um atraso (delay) de 0.5s antes de começar. */
+  transition: all 0.5s ease 1s;
+}
+
+.card:hover {
+  /* 3. Estado final (com o mouse em cima) */
+  background-color: rgba(255, 255, 255, 0.021);
+  opacity: 1;
+  filter: blur(0);
+
+  /* 4. A transição de ENTRADA */
+  /* Sobrescreve a transição da classe base apenas para a entrada. */
+  /* Duração de 0.5s, mas com um atraso de 0s (IMEDIATO). */
+  transition: all 0.5s ease 0s;
+}
+
+.card-icon {
+  margin-bottom: 15px;
+}
+
+.card-icon img {
+  width: 58px;
+  height: 58px;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #fff;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #a0a0a0;
+  margin: 0;
+}
+
+/* --- RESPONSIVIDADE --- */
+
+@media (max-width: 480px) {
+  .intro-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .card {
+    text-align: center;
+  }
+}
+
+/* Footer - Footer - */
+
+.footer-container {
+  border-top: 1.5px solid rgba(220, 220, 220, 0.096);
+  background: rgba(128, 128, 128, 0.048);
+  backdrop-filter: blur(3px);
   color: #ffffff;
+  padding: 60px 40px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Seções do Rodapé */
+.footer-section {
+  flex: 1;
+  min-width: 280px;
+  margin: 20px;
+}
+
+.footer-title {
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 
-.content-4 .desc {
-  font-size: 1rem;
-  color: #ffffff;
-  text-align: center;
-  max-width: 600px;
+.extra-links {
+  transform: translateX(145px);
 }
 
-.hamburger-button {
-  display: none;
+.footer-section p {
+  font-size: 0.9rem;
+  color: #cccccc;
+  max-width: 320px;
+}
+
+/* Seção Sobre */
+.about .footer-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Ícones Sociais */
+.social-icons {
+  margin-top: 60px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  color: #121212;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: #dddddd;
+  transform: translateY(-3px);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Seção de Links */
+.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links ul li {
+  margin-bottom: 10px;
+}
+
+.links ul li a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+/* Seção de Contato */
+.contact p {
+  margin: 0 0 10px 0;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .footer-content {
+    justify-content: space-around;
+  }
+  .footer-section {
+    flex-basis: 45%; /* Duas colunas em tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin: 25px 0;
+  }
+
+  .footer-section p {
+    max-width: none;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 40px 20px;
+  }
+  .extra-links {
+    transform: translateX(0px);
+  }
 }
 
 /* --- MEDIA QUERY PARA TELAS MENORES (CELULAR - max-width: 750px) --- */
-@media (max-width: 750px) {
+@media (max-width: 600px) {
   /* BODY & CONTAINER */
   body {
     font-size: 14px;
   }
 
+  .extra-links {
+    transform: translateX(0px);
+  }
+
   /* HEADER */
   .header {
-    width: 90%;
     max-width: 230px;
     margin-top: 12px;
+    transform: translateX(-132px);
   }
 
   .hamburger-button {
@@ -836,10 +1146,6 @@ ul a:hover {
     flex-direction: column;
     margin-left: 0;
     padding: 0px;
-  }
-
-  .content {
-    gap: 20px;
   }
 
   .flair {
@@ -877,6 +1183,10 @@ ul a:hover {
     white-space: nowrap;
   }
   /* CONTEÚDOS GERAIS (content, content-2, etc.) */
+
+  .content-2 {
+    margin-top: 100px;
+  }
   .content .desc,
   .content-2 .desc,
   .content-3 .desc,
@@ -890,13 +1200,18 @@ ul a:hover {
     margin-bottom: 150px;
     font-size: 4rem;
   }
+
+  .content-2 p {
+    text-align: center;
+    font-size: 0.9rem;
+  }
   .links-2 {
     margin-top: -2px;
-    margin-right: 110px;
+    margin-right: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    text-align: center;
   }
 
   .react-3d-cll {
@@ -909,7 +1224,7 @@ ul a:hover {
     position: absolute;
     z-index: 10;
     animation: autoShow-5 both;
-    animation-timeline: view(auto 35%);
+    animation-timeline: view(50% 20%);
     border-radius: 20px;
     border: 0.5px solid gray;
     background: rgba(128, 128, 128, 0.05);
@@ -927,7 +1242,7 @@ ul a:hover {
     position: absolute;
     z-index: 10;
     animation: autoShow-6 both;
-    animation-timeline: view(auto 15%);
+    animation-timeline: view(50% 20%);
     border-radius: 20px;
     border: 0.5px solid gray;
     background: rgba(128, 128, 128, 0.05);
@@ -945,7 +1260,7 @@ ul a:hover {
     position: absolute;
     z-index: 10;
     animation: autoShow-7 both;
-    animation-timeline: view(auto 15%);
+    animation-timeline: view(50% 20%);
     border-radius: 20px;
     border: 0.5px solid gray;
     background: rgba(128, 128, 128, 0.05);
@@ -963,7 +1278,7 @@ ul a:hover {
     position: absolute;
     z-index: 10;
     animation: autoShow-8 both;
-    animation-timeline: view(auto 15%);
+    animation-timeline: view(50% 20%);
     border-radius: 20px;
     border: 0.5px solid gray;
     background: rgba(128, 128, 128, 0.05);
@@ -972,10 +1287,24 @@ ul a:hover {
   }
 
   .content-3 {
-    margin-top: -120px;
+    margin-top: -10px;
     & h1 {
       font-size: 5.5rem;
+      text-align: center;
     }
+    & p {
+      text-align: center;
+    }
+
+    & h3 {
+      font-size: 3.3rem;
+      text-align: center;
+    }
+  }
+
+  .titulo-desc p {
+    text-align: center;
+    font-size: 1.2rem;
   }
 
   .content-java {
@@ -994,6 +1323,7 @@ ul a:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 40px;
   }
 
   .cards-ling {
@@ -1021,6 +1351,15 @@ ul a:hover {
     gap: 0px;
   }
 
+  .icon-vtg {
+    margin: px;
+    width: 95px;
+  }
+
+  .feature-item {
+    width: 230px;
+  }
+
   .container-vantagens {
     transition: none;
     margin-top: -150px;
@@ -1029,5 +1368,51 @@ ul a:hover {
   .seção-skills {
     transform: scale(0.87);
     margin-top: 0px;
+  }
+
+  .content-4 {
+    margin-top: 1000px;
+  }
+
+  .intro-image {
+    transform: scale(0.8);
+  }
+
+  .about-intro {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .intro-text {
+    order: 2;
+  }
+
+  .intro-image {
+    order: 1;
+    margin-bottom: 40px;
+  }
+
+  .intro-text h1 {
+    font-size: 0.5rem;
+  }
+
+  .intro-text p {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 60px;
+    margin-bottom: -140px;
+  }
+
+  .social-links {
+    justify-content: center;
+    margin-top: 100px;
+  }
+
+  .intro-text h1 {
+    font-size: 2.8rem;
+  }
+
+  .about-services h2 {
+    font-size: 2.2rem;
   }
 }
