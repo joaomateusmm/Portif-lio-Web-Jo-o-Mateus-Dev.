@@ -23,7 +23,7 @@
 
 .appear {
   animation: appear both;
-  animation-timeline: view(60% 30%);
+  animation-timeline: view(40% 20%);
 }
 
 @keyframes flasher {

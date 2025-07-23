@@ -576,23 +576,27 @@ ul a:hover {
   flex-direction: row;
 }
 
-.cards-ling :nth-child(2) {
+.cards-ling .content-java.hidden:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.cards-ling .content-java.hidden:nth-child(2) {
   transition-delay: 200ms;
 }
 
-.cards-ling :nth-child(3) {
+.cards-ling .content-java.hidden:nth-child(3) {
   transition-delay: 400ms;
 }
 
-.cards-ling :nth-child(4) {
+.cards-ling .content-java.hidden:nth-child(4) {
   transition-delay: 600ms;
 }
 
-.cards-ling :nth-child(5) {
+.cards-ling .content-java.hidden:nth-child(5) {
   transition-delay: 800ms;
 }
 
-.cards-ling :nth-child(6) {
+.cards-ling .content-java.hidden:nth-child(6) {
   transition-delay: 1000ms;
 }
 
@@ -619,6 +623,19 @@ ul a:hover {
   transition: all 0.3s ease-in-out;
 }
 
+.cardzinho {
+  transition: all 0.5s ease 2s;
+  opacity: 0.2;
+  filter: saturate(0);
+}
+
+.cardzinho:hover {
+  opacity: 1;
+  filter: saturate(1);
+  transform: scale(1.07);
+  transition: all 0.5s ease 0s;
+}
+
 .img-ling {
   margin: 40px;
   transform: translateX(-38px);
@@ -626,6 +643,7 @@ ul a:hover {
 
 .desc-ling {
   font-weight: 400;
+  text-align: start;
 }
 
 .title-ling {
@@ -646,6 +664,16 @@ ul a:hover {
 .title-ling-react {
   font-weight: 650;
   transform: translate(7px, -75px);
+}
+
+.title-ling-python {
+  font-weight: 650;
+  transform: translate(0px, -75px);
+}
+
+.title-ling-prisma {
+  font-weight: 650;
+  transform: translate(0px, -75px);
 }
 
 /* Animaçao do scroll -Animaçao do scroll Animaçao do scroll -Animaçao do scroll */
@@ -834,7 +862,17 @@ ul a:hover {
 }
 
 .social-button {
-  background-color: #005091;
+  --clr-font-main: hsla(0 0% 20% / 100);
+  --btn-bg-1: rgb(57, 209, 255);
+  --btn-bg-2: hsla(217 100% 56% / 1);
+  --btn-bg-color: rgb(0, 0, 0);
+  background-image: linear-gradient(
+    325deg,
+    var(--btn-bg-2) 0%,
+    var(--btn-bg-1) 55%,
+    var(--btn-bg-2) 90%
+  );
+
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -878,7 +916,7 @@ ul a:hover {
 .about-services h2 {
   color: #fff;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: normal;
   margin-bottom: 15px;
   transform: translateX(-680px);
@@ -909,7 +947,7 @@ ul a:hover {
   /* 2. A transição de SAÍDA (volta ao normal) */
   /* Aplica-se quando o mouse SAI do elemento. */
   /* Duração de 0.5s, mas com um atraso (delay) de 0.5s antes de começar. */
-  transition: all 0.5s ease 1s;
+  transition: all 0.5s ease 60s;
 }
 
 .card:hover {
@@ -1070,6 +1108,10 @@ ul a:hover {
 }
 
 @media (max-width: 768px) {
+  footer {
+    margin-top: 450px;
+  }
+
   .footer-content {
     flex-direction: column;
     align-items: center;
@@ -1186,6 +1228,7 @@ ul a:hover {
 
   .content-2 {
     margin-top: 100px;
+    overflow-x: hidden;
   }
   .content .desc,
   .content-2 .desc,
@@ -1297,7 +1340,7 @@ ul a:hover {
     }
 
     & h3 {
-      font-size: 3.3rem;
+      font-size: 2.8rem;
       text-align: center;
     }
   }
@@ -1312,11 +1355,25 @@ ul a:hover {
     flex-shrink: 0; /* Impede que os cards encolham */
   }
 
+  .cardzinho {
+    transition: all 0.5s ease 2s;
+    opacity: 1;
+    filter: saturate(1);
+  }
+
+  .cardzinho:hover {
+    opacity: 1;
+    filter: saturate(1);
+    transform: scale(1.02);
+    transition: all 0.5s ease 0s;
+  }
+
   .flair-2 {
-    margin-top: -1480px;
+    margin-top: -1520px;
   }
 
   .cards-ling {
+    transform: scale(0.9);
     gap: 15px;
     padding: 25px;
     display: flex;
@@ -1324,6 +1381,13 @@ ul a:hover {
     justify-content: center;
     flex-direction: column;
     margin-bottom: 40px;
+    & p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .container-ferramentas {
+    transform: scale(0.85);
   }
 
   .cards-ling {
@@ -1342,6 +1406,38 @@ ul a:hover {
     max-width: 250px; /* Mantém um limite de largura para os cards */
     min-width: unset; /* Sobrescreve o min-width anterior se necessário */
     height: 190px; /* Deixa a altura se ajustar ao conteúdo */
+    & img {
+      transform: translateX(9px);
+    }
+  }
+  .title-ling {
+    transform: translate(37px, -75px);
+    font-weight: 650;
+  }
+
+  .title-ling-html {
+    font-weight: 650;
+    transform: translate(57px, -75px);
+  }
+
+  .title-ling-css {
+    font-weight: 650;
+    transform: translate(64px, -75px);
+  }
+
+  .title-ling-react {
+    font-weight: 650;
+    transform: translate(57px, -75px);
+  }
+
+  .title-ling-python {
+    transform: translate(50px, -75px);
+    font-weight: 650;
+  }
+
+  .title-ling-prisma {
+    transform: translate(51px, -75px);
+    font-weight: 650;
   }
 
   .seção-skills {
@@ -1370,15 +1466,41 @@ ul a:hover {
     margin-top: 0px;
   }
 
+  /* ultima secáo */
+
   .content-4 {
-    margin-top: 1000px;
+    margin-top: 720px;
+    width: 100vw;
+    height: 100vh;
   }
 
   .intro-image {
+    transform: scale(0.7);
+    margin-top: -200px;
+    order: 1;
+  }
+
+  .services-cards {
+    gap: 0px;
+  }
+
+  .card {
     transform: scale(0.8);
+    padding: 35px 30px;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 460px;
+    text-align: center;
+    cursor: default;
+    opacity: 1;
+    filter: blur(0px);
+    background-color: rgba(255, 255, 255, 0.021);
+    transition: all 0.5s ease 60s;
   }
 
   .about-intro {
+    margin-top: -3px;
     flex-direction: column-reverse;
     text-align: center;
   }
@@ -1387,32 +1509,34 @@ ul a:hover {
     order: 2;
   }
 
-  .intro-image {
-    order: 1;
-    margin-bottom: 40px;
+  .intro-text {
+    & h1 {
+      font-size: 2rem;
+      width: 300px;
+      transform: translateX(75px);
+    }
   }
 
-  .intro-text h1 {
-    font-size: 0.5rem;
-  }
-
-  .intro-text p {
-    font-size: 0.9rem;
+  .intro-text .desc-me {
+    width: 450px;
+    font-size: 0.85rem;
     text-align: center;
     padding: 60px;
-    margin-bottom: -140px;
+    margin-top: -75px;
+    margin-bottom: -90px;
   }
 
   .social-links {
     justify-content: center;
-    margin-top: 100px;
-  }
-
-  .intro-text h1 {
-    font-size: 2.8rem;
+    margin-top: 50px;
   }
 
   .about-services h2 {
-    font-size: 2.2rem;
+    font-size: 1.3rem;
+    transform: translateX(3px);
+  }
+
+  .about-services {
+    margin-top: -180px;
   }
 }

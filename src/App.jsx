@@ -234,114 +234,126 @@ function App() {
         <a className="flair-2"></a>
         <h1 className="imageReveal">Skils</h1>
         <h2 className="imageReveal">Minhas habilidades e ferramentas!</h2>
-        <div className="cards-ling">
-          <div className="content-java hidden">
-            <p className="desc-ling">
-              #1{" "}
-              <span className="Contato" style={{ color: "#ffee00ff" }}>
-                Linguagem
-              </span>{" "}
-              mais utilizada no mercado!
-            </p>
-            <img
-              className="img-ling"
-              src={jsLogo}
-              alt="js Logo"
-              style={{ width: 58, height: 58, zIndex: 2 }}
-            />
-            <p className="title-ling">Java Script</p>
+        <section className="cards-ling">
+          <div className="cardzinho">
+            <div className="content-java hidden">
+              <p className="desc-ling">
+                #1{" "}
+                <span className="Contato" style={{ color: "#ffee00ff" }}>
+                  Linguagem
+                </span>{" "}
+                mais utilizada no mercado!
+              </p>
+              <img
+                className="img-ling"
+                src={jsLogo}
+                alt="js Logo"
+                style={{ width: 58, height: 58, zIndex: 2 }}
+              />
+              <p className="title-ling">Java Script</p>
+            </div>
           </div>
-          <div className="content-java hidden">
-            <p className="desc-ling">
-              Linguagem{" "}
-              <span className="Contato" style={{ color: "#ff5e00ff" }}>
-                padrão
-              </span>{" "}
-              para criação de páginas{" "}
-              <span className="Contato" style={{ color: "#ff5e00ff" }}>
-                Web.
-              </span>{" "}
-            </p>
-            <img
-              className="img-ling"
-              src={htmlLogo}
-              alt="js Logo"
-              style={{ width: 58, height: 58, zIndex: 2 }}
-            />
-            <p className="title-ling-html">HTML</p>
+          <div className="cardzinho">
+            <div className="content-java hidden">
+              <p className="desc-ling">
+                Linguagem{" "}
+                <span className="Contato" style={{ color: "#ff5e00ff" }}>
+                  padrão
+                </span>{" "}
+                para criação de páginas{" "}
+                <span className="Contato" style={{ color: "#ff5e00ff" }}>
+                  Web.
+                </span>{" "}
+              </p>
+              <img
+                className="img-ling"
+                src={htmlLogo}
+                alt="js Logo"
+                style={{ width: 58, height: 58, zIndex: 2 }}
+              />
+              <p className="title-ling-html">HTML</p>
+            </div>
           </div>
-          <div className="content-java hidden">
-            <p className="desc-ling">
-              Permite criar{" "}
-              <span className="Contato" style={{ color: "#0044ffff" }}>
-                designs
-              </span>{" "}
-              mais atraentes e responsivos.
-            </p>
-            <img
-              className="img-ling"
-              src={cssLogo}
-              alt="js Logo"
-              style={{ width: 58, height: 58, zIndex: 2 }}
-            />
-            <p className="title-ling-css">CSS</p>
+          <div className="cardzinho">
+            <div className="content-java hidden">
+              <p className="desc-ling">
+                Permite criar{" "}
+                <span className="Contato" style={{ color: "#0044ffff" }}>
+                  designs
+                </span>{" "}
+                mais atraentes e responsivos.
+              </p>
+              <img
+                className="img-ling"
+                src={cssLogo}
+                alt="js Logo"
+                style={{ width: 58, height: 58, zIndex: 2 }}
+              />
+              <p className="title-ling-css">CSS</p>
+            </div>
           </div>
-          <div className="content-java hidden">
-            <p className="desc-ling">
-              Criada pelo{" "}
-              <span className="Contato" style={{ color: "#00eeffff" }}>
-                Facebook
-              </span>{" "}
-              e amplamente utilizada no dev.{" "}
-              <span className="Contato" style={{ color: "#00eeffff" }}>
-                Front-end.
-              </span>{" "}
-            </p>
-            <img
-              className="img-ling"
-              src={ReactLogo}
-              alt="js Logo"
-              style={{ width: 58, height: 58, zIndex: 2 }}
-            />
-            <p className="title-ling-react">React</p>
+          <div className="cardzinho">
+            <div className="content-java hidden">
+              <p className="desc-ling">
+                Criada pelo{" "}
+                <span className="Contato" style={{ color: "#00eeffff" }}>
+                  Facebook
+                </span>{" "}
+                e amplamente utilizada no dev.{" "}
+                <span className="Contato" style={{ color: "#00eeffff" }}>
+                  Front-end.
+                </span>{" "}
+              </p>
+              <img
+                className="img-ling"
+                src={ReactLogo}
+                alt="js Logo"
+                style={{ width: 58, height: 58, zIndex: 2 }}
+              />
+              <p className="title-ling-react">React</p>
+            </div>
           </div>
-          <div className="content-java hidden">
-            <p className="desc-ling">
-              Linguagem de{" "}
-              <span className="Contato" style={{ color: "#ffee00ff" }}>
-                Programação
-              </span>{" "}
-              de{" "}
-              <span className="Contato" style={{ color: "#356eb9ff" }}>
-                alto nível
-              </span>{" "}
-              , em aplicações como dev. Web.
-            </p>
-            <img
-              className="img-ling"
-              src={pythonLogo}
-              alt="js Logo"
-              style={{ width: 58, height: 58, zIndex: 2 }}
-            />
-            <p className="title-ling">Python</p>
+          <div className="cardzinho">
+            <div className="content-java hidden">
+              <p className="desc-ling">
+                Linguagem de{" "}
+                <span className="Contato" style={{ color: "#ffee00ff" }}>
+                  Programação
+                </span>{" "}
+                de{" "}
+                <span className="Contato" style={{ color: "#356eb9ff" }}>
+                  alto nível
+                </span>{" "}
+                , em aplicações como dev. Web.
+              </p>
+              <img
+                className="img-ling"
+                src={pythonLogo}
+                alt="js Logo"
+                style={{ width: 58, height: 58, zIndex: 2 }}
+              />
+              <p className="title-ling-python">Python</p>
+            </div>
           </div>
-          <div className="content-java hidden">
-            <p className="desc-ling">
-              Serviço de{" "}
-              <span className="Contato" style={{ color: "#1d4880ff" }}>
-                banco de dados
-              </span>{" "}
-              gerenciado, rápido e otimizado.
-            </p>
-            <img
-              className="img-ling"
-              src={prismaLogo}
-              alt="js Logo"
-              style={{ width: 58, height: 58, zIndex: 2 }}
-            />
-            <p className="title-ling">Prisma</p>
+          <div className="cardzinho">
+            <div className="content-java hidden">
+              <p className="desc-ling">
+                Serviço de{" "}
+                <span className="Contato" style={{ color: "#1d4880ff" }}>
+                  banco de dados
+                </span>{" "}
+                gerenciado, rápido e otimizado.
+              </p>
+              <img
+                className="img-ling"
+                src={prismaLogo}
+                alt="js Logo"
+                style={{ width: 58, height: 58, zIndex: 2 }}
+              />
+              <p className="title-ling-prisma">Prisma</p>
+            </div>
           </div>
-        </div>
+        </section>
         <div className="seção-skills appear">
           <div className="container-vantagens hidden2">
             <div className="titulo-desc">
@@ -450,7 +462,7 @@ function App() {
               Programador Full-Stack |<br />
               Desenvolvedor Web
             </h1>
-            <p>
+            <p className="desc-me">
               Desenvolvedor Full-Stack com mais de 3 anos de experiência na área
               de Design, estou em transição de carreira, atuando na programação
               e desenvolvimento Web. Acredito na união entre o belo e o
@@ -465,7 +477,11 @@ function App() {
             <p className="follow-me">Me siga em:</p>
             <div className="social-links">
               {/* LinkedIn */}
-              <a href="#" className="social-button" aria-label="LinkedIn">
+              <a
+                href="https://www.linkedin.com/in/jo%C3%A3o-mateus-mesquita-161724364/"
+                className="social-button"
+                aria-label="LinkedIn"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -479,7 +495,11 @@ function App() {
                 </svg>
               </a>
               {/* GitHub */}
-              <a href="#" className="social-button" aria-label="GitHub">
+              <a
+                href="https://github.com/joaomateusmm"
+                className="social-button"
+                aria-label="GitHub"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -491,7 +511,11 @@ function App() {
                 </svg>
               </a>
               {/* Instagram */}
-              <a href="#" className="social-button" aria-label="Instagram">
+              <a
+                href="https://www.instagram.com/joaomateusdev/"
+                className="social-button"
+                aria-label="Instagram"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -511,16 +535,14 @@ function App() {
             </div>
           </div>
           <div className="intro-image">
-            {/* 2. Use a imagem importada aqui */}
             <img src={Fotominha} alt="Foto do Programador Full-Stack" />
           </div>
         </div>
 
-        {/* --- Parte Inferior: Serviços --- */}
         <div className="about-services">
           <h2>O que eu faço?</h2>
           <div className="services-cards">
-            <div className="card">
+            <div className="card imageReveal">
               <div className="card-icon">
                 <img src={logo1} alt="Ícone Site da sua Marca" />
               </div>
@@ -530,7 +552,7 @@ function App() {
                 estética profissional que a sua marca precisa.
               </p>
             </div>
-            <div className="card">
+            <div className="card imageReveal">
               <div className="card-icon">
                 <img src={logo2} alt="Ícone Página para Empresas" />
               </div>
@@ -541,7 +563,7 @@ function App() {
                 no mundo todo.
               </p>
             </div>
-            <div className="card">
+            <div className="card imageReveal">
               <div className="card-icon">
                 <img src={logo3} alt="Ícone Site para Profissionais" />
               </div>
@@ -559,6 +581,7 @@ function App() {
       <footer class="footer-container">
         <div class="footer-content">
           <div class="footer-section about">
+            <h3>JM dev.</h3>
             <p>
               Agora é sua chance de se destacar! Entre em Contato e tenha agora
               um site personalizado perfeito para o seu negócio.
@@ -634,10 +657,10 @@ function App() {
                 <a href="#home">Home</a>
               </li>
               <li>
-                <a href="#skills">Skills</a>
+                <a href="#skils">Skils</a>
               </li>
               <li>
-                <a href="#portifolio">Portifólio</a>
+                <a href="#projetos">Portifólio</a>
               </li>
               <li>
                 <a href="#sobre">Sobre</a>
