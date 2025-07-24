@@ -1185,6 +1185,7 @@ ul a:hover {
 
   /* TITULO PRINCIPAL */
   .titulo-principal {
+    margin-top: 100px;
     flex-direction: column;
     margin-left: 0;
     padding: 0px;
